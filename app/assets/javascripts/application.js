@@ -4,7 +4,7 @@ $(document).ready(function() {
   projectList.fetch();
 
   // Create a dummy project if there isn't one already
-  if(projectList.length == 0) {
+  if(projectList.length === 0) {
     var bucket_list = projectList.create({
       title: "Bucketlist",
       url: "https://github.com/dmgarland/BucketListApp",
@@ -27,4 +27,16 @@ $(document).ready(function() {
   // Create a view for the first Project and render it
   // var view = new app.views.ProjectView({ model: projectList.first() });
   // $('#project-list').append(view.render().el);
+
+  var me = new app.models.User({
+    firstName: "Corey",
+    lastName: "Trombley",
+    imageUrl: "uploads/corey.jpg",
+    bio: "Well ard coder from NYC",
+    mission: "Complete level 12 on bomberman and save the world from itself"
+  });
+
+  new app.views.UserView({
+    model: me
+  }).render();
 });
