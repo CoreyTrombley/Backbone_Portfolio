@@ -7,12 +7,16 @@ describe("A User", function() {
       firstName: 'Corey',
       lastName: 'Trombley',
       imageUrl: 'uploads/me.jpg',
-      bio: "some text goes here",
+      bio: "Well ard coder from NYC",
       mission: 'some more text here'
     });
   });
 
   it("should know how to print the entire name", function(){
     expect(user.fullName()).toEqual("Corey Trombley");
+  }),
+
+  it("should know how to print the bio", function(){
+    expect(user.attributes.bio).toEqual("Well ard coder from NYC");
   });
 });
